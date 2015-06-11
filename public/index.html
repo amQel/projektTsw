@@ -2,29 +2,67 @@
 <html>
 
 <head>
-  <title>Prosty klient WebSockets</title>
-  <meta charset="UTF-8">
-  <link rel="stylesheet" href="/css/styl.css">
+    <title>Prosty klient WebSockets</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/app.css">
+     <script src="/js/jquery.min.js"></script>
+    <script src="/js/phaser.min.js"></script>
 </head>
 
 <body>
-  <div>
-    <table>
-      <tr>
-        <td> <img id="status" src="/img/bullet_red.png" width="35"> </td>
-        <td> <input id="open" type="button" value="Połącz"> </td>
-        <td> <input id="close" type="button" value="Rozłącz"> </td>
-      </tr>
-    </table>
-    <p>
-      Komunikat:&nbsp;
-      <input id="text">&nbsp;<input id="send" type="button" value="Wyślij">
-    </p>
-    <p id="message"></p>
-  </div>
-  <script src="/socket.io/socket.io.js"></script>
-  <script src="/js/jquery.min.js"></script>
-  <script src="/js/skrypt.js"></script>
+   <div id="game">
+       <script src="/js/phasergame.js"></script>
+   </div>
+   <div id="userName">
+       <p>Jezeli nie chcesz sie nazywac dziwnie <br/> Podaj Swoj Nick i klikniej Enter <br> Escape aby usunac</p>
+       <input type="text" class="unInput">
+   </div>
+     <div id="gameOver">
+         <img id="goImage" src="/img/gameover_screen.png">
+         <p id="data">JakisNapis</p>
+         <p id="time">jakisnapis2</p>
+     </div>
+      
+<!--
+    <div id="chat">
+        <table>
+            <tr>
+                <td> <img id="status" src="/img/bullet_red.png" width="35"> </td>
+                <td>
+                    <input type="text" id="nick" value="Nick">
+                </td>
+                <td>
+                    <input id="open" type="button" value="Połącz"> </td>
+                <td>
+                    <input id="close" type="button" value="Rozłącz"> </td>
+            </tr>
+        </table>
+        <p>
+            Komunikat:&nbsp;
+            <input id="text">&nbsp;
+            <input id="send" type="button" value="Wyślij">
+        </p>
+        <p>
+            Stworz Pokój: &nbsp;
+            <input type="text" id="roomName">
+            <input type="button" id="createRoom" value="Stwórz">
+        </p>
+        <select id="rooms">
+            <option id="main">main
+            </option>
+        </select>
+           <p id="error"></p>
+            <div id="messages">
+            </div>
+            
+    </div>
+-->
+    <script src="/socket.io/socket.io.js"></script>
+   
+    
+<!--    <script src="/js/skrypt.js"></script>-->
+    
+    
 </body>
 
 </html>

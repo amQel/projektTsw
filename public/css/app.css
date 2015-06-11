@@ -1,1 +1,53 @@
-body{background-color:#eee}
+body {
+    background-color: #eee;
+ 
+}
+
+div#messages p {
+    color: royalblue;
+}
+
+#game {
+    display: none;
+}
+#userName {
+/*    display: none;*/
+    position: absolute;
+}
+#userName p{
+color: red;
+}
+
+#gameOver {
+display: none;
+position: absolute;
+}
+#gameOver p#data{
+font-size: 60px;
+position: fixed;
+top: 800px;
+left: 800px;
+color: red;
+}
+
+#gameOver p#time{
+font-size: 60px;
+position: fixed;
+top: 985px;
+left: 800px;
+color: snow;
+}
+#chat {
+/*    display: none;*/
+    position: absolute;
+    background:#999;
+/*
+   position:fixed;
+   left:0px;
+   bottom:0px;
+   height:300px;
+   width:100%;
+   
+*/
+}
+
