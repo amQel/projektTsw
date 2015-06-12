@@ -6,6 +6,8 @@ var sId;
 var bullets;
 var enemyBullets;
 
+var activeBullet = [];
+
 var fireRate = 100;
 var nextFire = 0;
 
@@ -464,6 +466,7 @@ $(document).ready(function () {
 
         game.physics.arcade.collide(sprite, platforms);
 
+	
 
 
         //    game.physics.arcade.collide(bullets, platforms);
@@ -473,6 +476,9 @@ $(document).ready(function () {
 
         sprite.rotation = game.physics.arcade.angleToPointer(sprite);
 
+	
+	
+	
         for (var i = 0; i < enemies.length; i++) {
             currentId = enemies[i].id;
             enemies[i].nickScore.x = Math.floor(enemies[i].enemy.x - enemies[i].enemy.width / 2);
@@ -521,6 +527,8 @@ $(document).ready(function () {
 
             bullet.reset(sprite.x - 8, sprite.y - 8);
 
+	    activeBullet.push(bullet);
+	    
             var mouseX = game.input.mousePointer.x;
             var mouseY = game.input.mousePointer.y;
             socket.emit('updatePos', sId, sprite.x, sprite.y);
@@ -529,6 +537,9 @@ $(document).ready(function () {
             console.log(mouseX + " " + mouseY + " " + sprite.x + " " + sprite.y);
 
             game.physics.arcade.moveToPointer(bullet, 500);
+	    setTimeout(function(){
+	      bullet.kill();
+	    }, 1000);
         }
 
     }
